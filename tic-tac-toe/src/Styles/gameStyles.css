@@ -1,0 +1,9 @@
+.all-container{
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    gap: 30px;
+    font-size: 40px;
+}
