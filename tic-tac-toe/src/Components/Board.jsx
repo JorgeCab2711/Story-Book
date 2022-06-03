@@ -57,16 +57,35 @@ export default function Board() {
 
 //Function to calculate the tic-tac-toe winniner
 function calculateWinner(squares){
-    const lines = [
-        [0,1,2],[3,4,5],[6,7,8], //Horizontal winning
-        [0,3,6],[1,4,7],[2,5,8], //Vertical winning
-        [0,4,8],[2,4,6] //Diagonal winning
-    ];
-    for (let line of lines){
-        const [a,b,c] = line;
-        if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
-            return squares[a];
-        }
-        return null;
+    // X winner horizontaly
+    if((squares[0] === 'X' && squares[1] === 'X' && squares[2] === 'X') || (squares[3] === 'X' && squares[4] === 'X' && squares[5] === 'X') || (squares[6] === 'X' && squares[7] === 'X' && squares[8] === 'X')){
+        console.log('nice')
+        return 'X';
+    }
+    // O winner horizontaly
+    else if((squares[0] === 'O' && squares[1] === 'O' && squares[2] === 'O') || (squares[3] === 'O' && squares[4] === 'O' && squares[5] === 'O') || (squares[6] === 'O' && squares[7] === 'O' && squares[8] === 'O')){
+        console.log('nice')
+        return 'O';
+    }
+    // X winner vertical
+    else if((squares[0] === 'X' && squares[3] === 'X' && squares[6] === 'X') || (squares[1] === 'X' && squares[4] === 'X' && squares[7] === 'X') || (squares[2] === 'X' && squares[5] === 'X' && squares[8] === 'X')){
+        console.log('nice')
+        return 'X';
+    }
+    // X winner diagonal
+    else if((squares[0] === 'X' && squares[4] === 'X' && squares[8] === 'X') || (squares[2] === 'X' && squares[4] === 'X' && squares[6] === 'X')){
+        console.log('nice')
+        return 'X';
+    }
+    
+    // O winner vertical
+    else if((squares[0] === 'O' && squares[3] === 'O' && squares[6] === 'O') || (squares[1] === 'O' && squares[4] === 'O' && squares[7] === 'O') || (squares[2] === 'O' && squares[5] === 'O' && squares[8] === 'O')){
+        console.log('nice')
+        return 'O';
+    }
+    // O winner diagonal
+    else if((squares[0] === 'O' && squares[4] === 'O' && squares[8] === 'O') || (squares[2] === 'O' && squares[4] === 'O' && squares[6] === 'O')){
+        console.log('nice')
+        return 'O';
     }
 }
