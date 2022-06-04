@@ -4,7 +4,7 @@ import Square  from './Square';
 import propTypes from 'prop-types'
 
 //Board Component
-export default function Board(height="100%", width="100%", backgroundColor='skyblue') {
+export default function Board(width=500,height=500,backgroundColor='skyblue') {
     const initialSquares = Array(9).fill(null);
     const [squares, setSquares ] = useState(initialSquares);
     const [xIsNext, setXIsNext] = useState(true);
@@ -29,8 +29,8 @@ export default function Board(height="100%", width="100%", backgroundColor='skyb
     }
 
     const style = {
+        width,
         height,
-        width, 
         backgroundColor,
     } 
 
@@ -88,5 +88,7 @@ function calculateWinner(squares){
 }
 
 Board.propTypes = {
+    width: propTypes.number,
+    height: propTypes.number,
     backgroundColor: propTypes.string,
 }
