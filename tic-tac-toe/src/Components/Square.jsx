@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 
-export const Square = (event, height= "100%", width= "100%",backgroundColor = 'gray') => {
+export default function Square ({onClickEvent, value, height= "100%", width= "100%",backgroundColor = 'gray'})  {
     
     const styles = {
         height,
@@ -12,10 +12,10 @@ export const Square = (event, height= "100%", width= "100%",backgroundColor = 'g
     return (
         <button 
             className='square-container'
-            onClick={event.onClickEvent}
+            onClick={onClickEvent}
             style={styles}
             >
-            {event.value}
+            {value}
         </button>
     );
 }

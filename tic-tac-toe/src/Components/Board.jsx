@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import '../Styles/Board.css';
-import { Square } from './Square';
+import Square  from './Square';
 import propTypes from 'prop-types'
 
 //Board Component
-export default function Board(height="100%", width="100%", backgroundColor='red') {
+export default function Board(height="100%", width="100%", backgroundColor='skyblue') {
     const initialSquares = Array(9).fill(null);
     const [squares, setSquares ] = useState(initialSquares);
     const [xIsNext, setXIsNext] = useState(true);
