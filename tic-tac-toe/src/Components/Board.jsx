@@ -1,19 +1,10 @@
 import React, {useState} from 'react'
 import '../Styles/Board.css';
-
-const Square = (props) => {
-    return (
-        <button 
-            className='square-container'
-            onClick={props.onClickEvent}
-            >
-            {props.value}
-        </button>
-    );
-}
+import { Square } from './Square';
+import propTypes from 'prop-types'
 
 //Board Component
-export default function Board() {
+export default function Board(height=800, width=800, backgroundColor='red') {
     const initialSquares = Array(9).fill(null);
     const [squares, setSquares ] = useState(initialSquares);
     const [xIsNext, setXIsNext] = useState(true);
@@ -37,10 +28,14 @@ export default function Board() {
         )
     }
 
+    const style = {
+        backgroundColor,
+    } 
+
         return (
         <>
             <div className='status'>{status}</div>
-            <div className="board-container">
+            <div className="board-container" style={style}>
                 {renderSquare(0)}
                 {renderSquare(1)}
                 {renderSquare(2)}
@@ -88,4 +83,8 @@ function calculateWinner(squares){
         console.log('nice')
         return 'O';
     }
+}
+
+Board.propTypes = {
+    backgroundColor: propTypes.string
 }
