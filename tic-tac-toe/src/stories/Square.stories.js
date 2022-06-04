@@ -1,6 +1,7 @@
 import React from 'react';
 import Square from '../Components/Square';
 import { action } from '@storybook/addon-actions';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 export default {
   title: 'Square',
@@ -9,8 +10,14 @@ export default {
 };
 
 const Template = (args) => (
-  <Square onClick={action('Its been Clicked')} {...args} />
+  <Square onClickEvent={action('Its been Clicked')} {...args} />
 );
+
+export const parameters = {
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+};
 
 export const Red = Template.bind({});
 

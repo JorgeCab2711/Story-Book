@@ -23,5 +23,6 @@ export default function Square ({onClickEvent, value, height= "100%", width= "10
 Square.propTypes = {
     height: propTypes.string,
     width: propTypes.string,
-    backgroundColor: propTypes.string
+    backgroundColor: propTypes.string, 
+    onClickEvent: propTypes.func
 }

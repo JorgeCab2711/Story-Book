@@ -28,7 +28,7 @@ export default function Board(width=500,height=500,backgroundColor='skyblue') {
         )
     }
 
-    const style = {
+    const styles = {
         width,
         height,
         backgroundColor,
@@ -37,7 +37,7 @@ export default function Board(width=500,height=500,backgroundColor='skyblue') {
         return (
         <>
             <div className='status'>{status}</div>
-            <div className="board-container" style={style}>
+            <div className="board-container" style={styles}>
                 {renderSquare(0)}
                 {renderSquare(1)}
                 {renderSquare(2)}
@@ -91,4 +91,5 @@ Board.propTypes = {
     width: propTypes.number,
     height: propTypes.number,
     backgroundColor: propTypes.string,
+    onClick: propTypes.func,
 }
